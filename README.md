@@ -108,7 +108,7 @@ java -Ddata.folder=./custom-data -cp bin edu.ccrm.cli.MainMenu
    javac -version
    ```
 
-   ![img.png](img.png)
+   ![image.png](image.png)
 
 ### Eclipse IDE Setup
 
@@ -128,14 +128,14 @@ java -Ddata.folder=./custom-data -cp bin edu.ccrm.cli.MainMenu
     - Select JDK version (11+)
     - Configure build path if needed
 
-   ![img_1.png](img_1.png)
+   ![image-1.png](image-1.png)
 
 4. **Import Existing Project**
     - File → Import → General → Existing Projects into Workspace
     - Browse to CCRM project folder
     - Select project and click Finish
 
-   ![img_2.png](img_2.png)
+   ![image-2.png](image-2.png)
 
 ## Project Structure & Syllabus Mapping
 
