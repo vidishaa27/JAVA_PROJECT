@@ -1,127 +1,296 @@
-📘 CCRM – Course & Student Management System
-📌 Project Overview
+# CCRM - College Course Registration Management System
 
-This is a Java-based CLI Project for managing students, courses, enrollments, grades, reports, and backups.
-It demonstrates Java fundamentals, OOPs, packages, file handling, and CLI menus in a structured way.
+## Project Overview
 
-The project supports:
+CCRM is a comprehensive Java-based College Course Registration Management System that provides functionality for managing students, courses, enrollments, and academic transcripts. The system demonstrates advanced Java programming concepts including object-oriented design, exception handling, file I/O operations, and stream processing.
 
-* Student Management (Add, List, Search)
+### How to Run
 
-* Course Management (Add, List, Search)
+**Prerequisites:**
+- JDK 11 or higher (recommended: Oracle JDK 17 or OpenJDK 17)
+- Eclipse IDE (2023-03 or later) or IntelliJ IDEA
+- Minimum 4GB RAM, 2GB free disk space
 
-* Enrollments & Grade Assignments
+**Commands:**
+```bash
+# Compile the project
+javac -d bin -cp src src/edu/ccrm/cli/MainMenu.java
 
-* Import/Export of Data
+# Run the main application
+java -cp bin edu.ccrm.cli.MainMenu
 
-* Backup & Restore options
+# Run with assertions enabled
+java -ea -cp bin edu.ccrm.cli.MainMenu
 
-* Transcript Reports
+# Run with custom data folder
+java -Ddata.folder=./custom-data -cp bin edu.ccrm.cli.MainMenu
+```
 
-🚀 How to Run
-✅ Requirements
+## Evolution of Java
 
-JDK Version: OpenJDK 21 (Temurin-21.0.8+9 LTS)
+- **1995**: Java 1.0 - Initial release by Sun Microsystems
+- **1997**: Java 1.1 - Inner classes, reflection, JDBC
+- **1998**: Java 1.2 (J2SE) - Collections framework, Swing GUI
+- **2000**: Java 1.3 - HotSpot JVM, JNDI
+- **2002**: Java 1.4 - Assertions, NIO, logging API
+- **2004**: Java 5.0 - Generics, annotations, autoboxing, enhanced for-loop
+- **2006**: Java 6 - Performance improvements, compiler API
+- **2011**: Java 7 - Try-with-resources, diamond operator, strings in switch
+- **2014**: Java 8 - Lambda expressions, streams, Optional, default methods
+- **2017**: Java 9 - Modules (Project Jigsaw), JShell
+- **2018**: Java 10 - Local variable type inference (var)
+- **2018**: Java 11 - LTS version, HTTP client API
+- **2019**: Java 12-13 - Switch expressions, text blocks (preview)
+- **2020**: Java 14-15 - Records (preview), pattern matching
+- **2021**: Java 16-17 - Records finalized, sealed classes, LTS version
+- **2022-2024**: Java 18-21 - Virtual threads, pattern matching enhancements
 
-IDE (Optional): Eclipse IDE for Java Developers
+## Java Editions Comparison
 
-OS Tested On: Windows 10/11
+| Feature | Java ME (Micro Edition) | Java SE (Standard Edition) | Java EE (Enterprise Edition) |
+|---------|------------------------|---------------------------|------------------------------|
+| **Target Platform** | Mobile devices, embedded systems | Desktop applications, standalone apps | Enterprise web applications |
+| **Memory Footprint** | Very small (< 1MB) | Moderate (50-200MB) | Large (100MB+) |
+| **Core APIs** | Limited subset | Full Java APIs | SE + Enterprise APIs |
+| **GUI Support** | MIDP, LWUIT | Swing, JavaFX, AWT | Web-based (JSF, JSP) |
+| **Database** | Basic RMS | JDBC | JPA, EJB, advanced ORM |
+| **Networking** | HTTP, sockets (limited) | Full networking APIs | Web services, REST, SOAP |
+| **Security** | Basic sandbox | Comprehensive security | Enterprise security, JAAS |
+| **Use Cases** | IoT devices, feature phones | Desktop apps, utilities | Web apps, microservices |
+| **Examples** | Nokia apps, smart cards | NetBeans, Eclipse | Banking systems, e-commerce |
 
-🔹 Compile
-cd C:\Users\Hp\IdeaProjects\JAVA_PROJECT
-javac -d out src/edu/ccrm/cli/MainMenu.java
+## JDK/JRE/JVM Explanation
 
-🔹 Run
-java -cp out edu.ccrm.cli.MainMenu
+```
+┌─────────────────────────────────────┐
+│              JDK                    │
+│  ┌─────────────────────────────┐    │
+│  │            JRE              │    │
+│  │  ┌─────────────────────┐    │    │
+│  │  │        JVM          │    │    │
+│  │  │  - Bytecode Exec.   │    │    │
+│  │  │  - Memory Mgmt      │    │    │
+│  │  │  - Garbage Collect. │    │    │
+│  │  └─────────────────────┘    │    │
+│  │  + Core Libraries (java.*)  │    │
+│  │  + Runtime Classes          │    │
+│  └─────────────────────────────┘    │
+│  + Development Tools (javac, jar)   │
+│  + Documentation & Headers          │
+└─────────────────────────────────────┘
+```
 
-🏛 Evolution of Java (Quick Bullets)
+- **JVM (Java Virtual Machine)**: Executes bytecode, manages memory, handles garbage collection
+- **JRE (Java Runtime Environment)**: JVM + core libraries needed to run Java applications
+- **JDK (Java Development Kit)**: JRE + development tools (compiler, debugger, documentation)
 
-1995 – Java released by Sun Microsystems.
+## Installation Guide
 
-1998 – Java 2 (introduced J2SE, J2EE, J2ME).
+### Windows JDK Installation
 
-2004 – Java 5 (Generics, Annotations, Enhanced for loop).
+1. **Download JDK**
+    - Visit [Oracle JDK](https://www.oracle.com/java/technologies/downloads/) or [OpenJDK](https://openjdk.org/)
+    - Download Windows x64 installer
 
-2011 – Oracle acquired Sun Microsystems.
+2. **Install JDK**
+    - Run the installer as administrator
+    - Follow installation wizard
+    - Note installation path (e.g., `C:\Program Files\Java\jdk-17`)
 
-2014 – Java 8 (Streams, Lambda, Optional, Date-Time API).
+3. **Set Environment Variables**
+    - Open System Properties → Advanced → Environment Variables
+    - Add `JAVA_HOME`: `C:\Program Files\Java\jdk-17`
+    - Update `PATH`: Add `%JAVA_HOME%\bin`
 
-2017 – Java 9 (Modules, JShell).
+4. **Verify Installation**
+   ```bash
+   java -version
+   javac -version
+   ```
 
-2018 onwards – 6-month release cycle (Java 10, 11 LTS, …).
+   ![img.png](img.png)
 
-2023+ – Latest long-term releases: Java 17, 21.
+### Eclipse IDE Setup
 
-🖥 Java Editions Comparison
-Feature	Java ME (Micro Edition)	Java SE (Standard Edition)	Java EE (Enterprise Edition)
-Target	Embedded devices, Mobile	Desktop, Standalone Apps, Core API	Large scale Web & Enterprise apps
-APIs	Limited	Full Core APIs (Collections, Streams)	Adds Servlets, JSP, EJB, JPA
-Use Case	IoT, Old feature phones	General-purpose apps	Web servers, Enterprise business apps
-🔧 JDK, JRE, JVM Explanation
+1. **Download Eclipse**
+    - Visit [Eclipse Downloads](https://www.eclipse.org/downloads/)
+    - Download Eclipse IDE for Java Developers
 
-JVM (Java Virtual Machine): Runtime engine that executes Java bytecode.
+2. **Install and Configure**
+    - Extract Eclipse to desired location
+    - Launch Eclipse and select workspace
+    - Go to Window → Preferences → Java → Installed JREs
+    - Verify correct JDK is selected
 
-JRE (Java Runtime Environment): JVM + Core Libraries (needed to run Java apps).
+3. **Create New Project**
+    - File → New → Java Project
+    - Enter project name: "CCRM"
+    - Select JDK version (11+)
+    - Configure build path if needed
 
-JDK (Java Development Kit): JRE + Compiler + Debugger + Tools (needed to develop apps).
+   ![img_1.png](img_1.png)
 
-🪟 Windows Installation Steps
+4. **Import Existing Project**
+    - File → Import → General → Existing Projects into Workspace
+    - Browse to CCRM project folder
+    - Select project and click Finish
 
-Download OpenJDK from Adoptium Temurin
-.
+   ![img_2.png](img_2.png)
 
-Install and set JAVA_HOME in Environment Variables.
+## Project Structure & Syllabus Mapping
 
-Verify installation:
+| Syllabus Topic | File/Class | Method/Concept | Description |
+|----------------|------------|----------------|-------------|
+| **Main Method & CLI** | `edu.ccrm.cli.MainMenu` | `main()`, `start()` | Application entry point, menu system |
+| **Classes & Objects** | `edu.ccrm.domain.Student` | Constructor, getters/setters | Student entity with encapsulation |
+| **Builder Pattern** | `edu.ccrm.domain.Course.Builder` | `code()`, `title()`, `build()` | Fluent API for object creation |
+| **Enums** | `edu.ccrm.domain.Grade` | `S, A, B, C, D, F` | Grade enumeration with points |
+| **Enums Advanced** | `edu.ccrm.domain.Semester` | `SPRING, FALL, SUMMER` | Semester enumeration |
+| **Collections (List)** | `StudentService`, `CourseService` | `listAll()`, `ArrayList` | Student and course management |
+| **Collections (Map)** | `MainMenu.showGpaDistribution()` | `HashMap<String, Double>` | GPA tracking and distribution |
+| **Optional Class** | `StudentService.findByRegNo()` | `Optional<Student>` | Null-safe object handling |
+| **Stream API** | `MainMenu.manageEnrollments()` | `filter()`, `toList()` | Filtering ungraded enrollments |
+| **Stream Collectors** | `MainMenu.showGpaDistribution()` | `groupingBy()`, `counting()` | GPA distribution grouping |
+| **Lambda Expressions** | `MainMenu.showGpaDistribution()` | `forEach()`, arrow functions | Functional programming |
+| **Exception Handling** | `edu.ccrm.exceptions.*` | Try-catch blocks | Custom exceptions (DuplicateEnrollment) |
+| **File I/O (NIO)** | `MainMenu.performBackup()` | `Files.copy()`, `DirectoryStream` | File operations and backup |
+| **Recursion** | `edu.ccrm.util.RecursionUtil` | `calculateDirectorySize()` | Recursive directory traversal |
+| **Configuration** | `edu.ccrm.config.AppConfig` | Singleton pattern | Application configuration |
+| **Service Layer** | `edu.ccrm.service.*` | Business logic separation | Service-oriented architecture |
+| **Switch Expressions** | `MainMenu.start()` | `case "1" ->` | Modern switch syntax (Java 14+) |
+| **Record Classes** | `edu.ccrm.domain.Name` | Immutable data carriers | Modern Java record syntax |
+| **Import/Export** | `edu.ccrm.io.ImportExportService` | CSV file processing | Data persistence |
+| **Transcript Generation** | `edu.ccrm.service.TranscriptService` | `generateTranscript()` | Report generation |
 
-java -version
-javac -version
+## Running with Assertions
+
+Assertions help validate program correctness during development:
+
+### Enable Assertions
+```bash
+# Enable all assertions
+java -ea edu.ccrm.cli.MainMenu
+
+# Enable assertions for specific package
+java -ea:edu.ccrm... edu.ccrm.cli.MainMenu
+
+# Enable assertions for enrollment service
+java -ea:edu.ccrm.service.EnrollmentService edu.ccrm.cli.MainMenu
+
+# Disable assertions (default in production)
+java -da edu.ccrm.cli.MainMenu
+```
+
+### Sample Assertion Commands
+```bash
+# Run CCRM with assertions enabled
+java -ea -cp bin edu.ccrm.cli.MainMenu
+
+# Run with system assertions and custom data folder
+java -esa -ea -Ddata.folder=./test-data -cp bin edu.ccrm.cli.MainMenu
+
+# Run with assertions for enrollment validation
+java -ea:edu.ccrm.service.EnrollmentService -cp bin edu.ccrm.cli.MainMenu
+```
+
+### Assertion Examples in CCRM
+```java
+// Credit limit validation
+assert totalCredits <= maxCredits : "Total credits exceed limit: " + totalCredits;
+
+// Student registration validation
+assert regNo != null && !regNo.isEmpty() : "Registration number cannot be empty";
+
+// Grade point validation
+assert grade.getPoints() >= 0.0 && grade.getPoints() <= 10.0 : "Invalid grade points";
+```
+
+## Application Features
+
+### 1. Student Management
+- **Add Students**: Register new students with RegNo, Name, and Email
+- **List All Students**: Display complete student roster
+- **Search by Name**: Find students using partial name matching
+- **Update Student**: Modify student email addresses
+
+### 2. Course Management
+- **Add Courses**: Create courses with code, title, credits, and department
+- **List All Courses**: View complete course catalog
+- **Search/Filter**: Filter courses by department
+- **Builder Pattern**: Uses Course.Builder for flexible object creation
+
+### 3. Enrollment & Grading
+- **Student Enrollment**: Enroll students in courses with validation
+- **Credit Limit Checking**: Prevents over-enrollment based on max credits
+- **Grade Assignment**: Assign grades (S/A/B/C/D/F) to enrolled students
+- **Duplicate Prevention**: Prevents duplicate enrollment in same course
+
+### 4. Reports & Analytics
+- **Transcript Generation**: Complete academic transcript for students
+- **GPA Distribution**: Statistical analysis of student performance
+- **GPA Calculation**: Weighted GPA based on credits and grade points
+
+### 5. Data Management
+- **Import/Export**: CSV-based data import and export functionality
+- **Backup System**: Automated backup with size calculation
+- **Data Persistence**: File-based storage in configurable data folder
 
 
-Install Eclipse IDE → Select Java Developers package.
+## Usage Guide
 
-Configure Eclipse → Add Installed JDK → Create New Java Project → Add src folder.
+### Quick Start
+```bash
+# Clone/download CCRM project
+git clone [your-repo-url]
 
-📷 (Insert your installation + Eclipse screenshots here as required by assignment)
+# Compile all source files
+javac -d bin -cp src src/edu/ccrm/cli/MainMenu.java
 
-📑 Mapping Table – Syllabus Topics → Code Files
-Syllabus Topic	File/Class/Method Demonstrated
-Packages	edu.ccrm.cli.MainMenu
-OOP (Classes, Objects)	Student.java, Course.java
-Inheritance / Interfaces	ExportService.java
-Collections	StudentService.java
-Exception Handling	MainMenu.java (menu inputs)
-File Handling (Import/Export)	ExportService.java
-CLI Interaction	MainMenu.java
-Assertions	StudentServiceTest.java
-✅ Enabling Assertions
+# Run CCRM application
+java -cp bin edu.ccrm.cli.MainMenu
+```
 
-Assertions are disabled by default in Java.
-To enable, use the -ea flag.
+### Sample Commands & Operations
+```bash
+# Run with custom configuration
+java -Ddata.folder=./custom-data -Dmax.credits=24 -cp bin edu.ccrm.cli.MainMenu
 
-Example:
-java -ea -cp out edu.ccrm.cli.MainMenu
+# Run with debug output
+java -ea -verbose:gc -cp bin edu.ccrm.cli.MainMenu
 
-Sample Assertion in Code:
-assert student != null : "Student should not be null after adding!";
+# Generate transcript for specific student
+# (Use option 4 in menu, then enter RegNo)
 
-📂 Project Structure
-JAVA_PROJECT/
-│── src/
-│   └── edu/ccrm/cli/MainMenu.java
-│   └── edu/ccrm/model/Student.java
-│   └── edu/ccrm/model/Course.java
-│   └── edu/ccrm/service/StudentService.java
-│   └── edu/ccrm/service/ExportService.java
-│── out/ (compiled .class files)
-│── README.md
+# Perform system backup
+# (Use option 6 in menu - creates timestamped backup folder)
+```
 
-📌 Notes
+### Test Data Files Structure
+```
+test-data/
+├── students.csv          # Sample student records (RegNo, FirstName, LastName, Email)
+├── courses.csv           # Course catalog (Code, Title, Credits, Department, Semester)
+├── enrollments.csv       # Enrollment data (StudentRegNo, CourseCode, Grade)
+└── config.properties     # Application configuration settings
+```
 
-This project is CLI-based, but can be extended to GUI (Swing/JavaFX) or Web (Spring Boot).
+### Sample CSV Formats
 
-Use Eclipse for easier compilation and debugging.
+**students.csv:**
+```csv
+RegNo,FirstName,LastName,Email
+CS001,John,Doe,john.doe@university.edu
+CS002,Jane,Smith,jane.smith@university.edu
+CS003,Bob,Johnson,bob.johnson@university.edu
+```
 
-For data persistence, CSV/JSON files are used (can be upgraded to MySQL).
+**courses.csv:**
+```csv
+Code,Title,Credits,Department,Semester
+CS101,Programming Fundamentals,4,Computer Science,SPRING
+CS102,Data Structures,4,Computer Science,FALL
+MATH201,Calculus I,3,Mathematics,SPRING
+```
 
-Author: Vidishaa Deo
+
+
