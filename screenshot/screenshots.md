@@ -23,4 +23,3 @@
 ![image-12.png](image-12.png)
 ![image-13.png](image-13.png)
 ![image-14.png](image-14.png)
-![image-15.png](image-15.png)
